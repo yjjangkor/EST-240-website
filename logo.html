@@ -3,68 +3,38 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Logo &amp; AI Prompts — Hungry Gaze</title>
+<title>Logo & AI Prompts — Hungry Gaze</title>
 <link rel="stylesheet" href="style.css">
 <style>
-.page-header { padding: 56px 0 40px; border-bottom: 1px solid var(--border); margin-bottom: 48px; }
-.logo-section { margin-bottom: 60px; }
-.logo-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
-  margin: 28px 0;
-}
-.logo-item { text-align: center; }
-.logo-box {
-  aspect-ratio: 1;
-  border-radius: var(--radius);
-  margin-bottom: 12px;
-}
-.logo-version {
-  font-family: var(--mono);
-  font-size: 11px;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--muted);
-}
-.process-section { margin-bottom: 60px; }
-.process-section h2 {
-  font-family: var(--serif);
-  font-size: 26px;
-  font-weight: 700;
-  margin-bottom: 8px;
-}
-.process-section p {
-  font-size: 14px;
-  color: var(--muted);
-  line-height: 1.8;
-  max-width: 600px;
-  margin-bottom: 24px;
-}
-.prompt-block {
-  background: #1c1a17;
-  border-radius: var(--radius);
-  padding: 20px 24px;
-  margin-bottom: 16px;
-}
-.prompt-label {
-  font-family: var(--mono);
-  font-size: 9px;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: var(--accent);
-  margin-bottom: 10px;
-  display: block;
-}
-.prompt-text {
-  font-family: var(--mono);
-  font-size: 12.5px;
-  color: #c8c0b0;
-  line-height: 1.7;
-  white-space: pre-wrap;
-}
-.ai-video-section { margin-bottom: 80px; }
-@media (max-width: 600px) { .logo-grid { grid-template-columns: 1fr; } }
+.page-header { padding: 56px 0 40px; border-bottom: 1px solid var(--border); margin-bottom: 56px; }
+.logo-hero { display:flex; flex-direction:column; align-items:center; padding:72px 0 52px; border-bottom:1px solid var(--border); margin-bottom:56px; }
+.logo-hero-desc { max-width:500px; text-align:center; font-size:15px; color:var(--muted); line-height:1.9; margin-top:40px; }
+.logo-hero-desc em { color:var(--text); font-style:italic; }
+.sizes-section h2 { font-family:var(--serif); font-size:22px; font-weight:700; margin-bottom:6px; }
+.sizes-section > p { font-size:13px; color:var(--muted); margin-bottom:32px; }
+.sizes-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:20px; margin-bottom:56px; }
+.size-card { border:1px solid var(--border); border-radius:var(--radius); overflow:hidden; background:var(--white); }
+.size-canvas { display:flex; align-items:center; justify-content:center; padding:52px 24px; border-bottom:1px solid var(--border); background:var(--bg); min-height:240px; }
+.size-canvas.dark { background:#1c1a17; }
+.size-info { padding:18px 20px; }
+.size-tag { font-family:var(--mono); font-size:10px; letter-spacing:0.15em; text-transform:uppercase; color:var(--accent); display:block; margin-bottom:5px; }
+.size-name { font-family:var(--serif); font-size:15px; font-weight:600; margin-bottom:3px; }
+.size-note { font-size:12px; color:var(--light); }
+.criteria-section { margin-bottom:56px; }
+.criteria-section h2 { font-family:var(--serif); font-size:22px; font-weight:700; margin-bottom:24px; }
+.cr { display:grid; grid-template-columns:140px 1fr; gap:20px; padding:18px 0; border-bottom:1px solid var(--border); font-size:14px; line-height:1.75; }
+.cr:last-child { border-bottom:none; }
+.cr-k { font-family:var(--mono); font-size:10.5px; letter-spacing:0.1em; text-transform:uppercase; color:var(--text); font-weight:500; padding-top:2px; }
+.cr-v { color:var(--muted); }
+.cr-v em { font-style:italic; color:var(--text); }
+.prompts-section { padding-bottom:80px; }
+.prompts-section h2 { font-family:var(--serif); font-size:22px; font-weight:700; margin-bottom:8px; }
+.prompts-intro { font-size:14px; color:var(--muted); line-height:1.8; margin-bottom:28px; }
+.prompts-intro strong { color:var(--text); font-weight:500; }
+.pcard { background:#1c1a17; border-radius:var(--radius); padding:22px 26px; margin-bottom:12px; }
+.pnum { font-family:var(--mono); font-size:9.5px; letter-spacing:0.2em; text-transform:uppercase; color:var(--accent); margin-bottom:12px; display:block; }
+.pbody { font-family:var(--mono); font-size:12.5px; color:#c8bfaf; line-height:1.75; white-space:pre-wrap; }
+@media(max-width:720px){ .sizes-grid{grid-template-columns:1fr;} .cr{grid-template-columns:1fr;gap:6px;} }
 </style>
 </head>
 <body>
@@ -72,13 +42,14 @@
 <nav class="nav">
   <div class="nav-inner">
     <a href="index.html" class="nav-brand">
-      <div class="nav-logo-box">YJ</div>
+      <img src="logo-small-icon.svg" style="width:28px;height:28px;border-radius:50%;" alt="logo">
       youngjae
     </a>
     <div class="nav-links">
       <a href="index.html">Home</a>
       <a href="channel.html">Channel</a>
       <a href="essay.html">Essay</a>
+      <a href="logo.html" class="active">Logo</a>
       <a href="about.html">About</a>
     </div>
   </div>
@@ -88,68 +59,169 @@
 
   <div class="page-header">
     <span class="eyebrow">Module 8 · Visual Identity</span>
-    <h1 class="section-title" style="font-size:clamp(32px,5vw,52px);">The Logo</h1>
-    <p style="font-family:var(--serif);font-style:italic;font-size:16px;color:var(--muted);margin-top:10px;">Personal mark and AI generation process.</p>
+    <h1 class="section-title" style="font-size:clamp(36px,5vw,58px);">The Logo</h1>
+    <p style="font-family:var(--serif);font-style:italic;font-size:17px;color:var(--muted);margin-top:10px;">The spoon that looks back.</p>
   </div>
 
-  <!-- Logo display -->
-  <section class="logo-section">
-    <h2 style="font-family:var(--serif);font-size:22px;font-weight:700;margin-bottom:6px;">Personal Logo</h2>
-    <p style="font-size:14px;color:var(--muted);margin-bottom:24px;">Three versions of the personal mark. Logo images to be added.</p>
+  <!-- HERO: large mark -->
+  <div class="logo-hero">
+    <svg viewBox="0 0 240 230" xmlns="http://www.w3.org/2000/svg" width="320" height="307" style="display:block;">
+      <!-- Spoon bowl = eye outline -->
+      <ellipse cx="94" cy="86" rx="44" ry="31" fill="none" stroke="#c8651a" stroke-width="3.2"/>
+      <!-- Pupil inside the bowl = the eye's gaze -->
+      <circle cx="94" cy="86" r="13" fill="#c8651a"/>
+      <!-- Spoon handle — extends lower-right -->
+      <path d="M 133,106 C 155,128 172,150 188,172"
+            stroke="#c8651a" stroke-width="9" stroke-linecap="round" fill="none"/>
+      <!-- Rule -->
+      <line x1="58" y1="178" x2="178" y2="178" stroke="#e5e1db" stroke-width="1"/>
+      <!-- Wordmark -->
+      <text x="118" y="198" text-anchor="middle"
+            font-family="'Playfair Display',Georgia,serif"
+            font-style="italic" font-size="22" fill="#1a1a17" letter-spacing="0.3">youngjae</text>
+      <!-- Tagline -->
+      <text x="118" y="218" text-anchor="middle"
+            font-family="'DM Mono','Courier New',monospace"
+            font-size="8.5" fill="#c8651a" letter-spacing="4.5">HUNGRY · GAZE</text>
+    </svg>
 
-    <div class="logo-grid">
-      <div class="logo-item">
-        <div class="placeholder logo-box">Color<br>Version</div>
-        <p class="logo-version">Color</p>
-      </div>
-      <div class="logo-item">
-        <div class="placeholder logo-box">Icon<br>Version</div>
-        <p class="logo-version">Icon</p>
-      </div>
-      <div class="logo-item">
-        <div class="placeholder logo-box">B&amp;W<br>Version</div>
-        <p class="logo-version">Black &amp; White</p>
-      </div>
-    </div>
+    <p class="logo-hero-desc">
+      A spoon. Look at the bowl — there is an eye staring back.
+      One shape carries both readings simultaneously:
+      the spoon means <em>hunger</em>, the eye means <em>gaze</em>.
+      You cannot separate them. That is the point.
+    </p>
+  </div>
 
-    <!-- Logo description placeholder -->
-    <div class="card" style="max-width:640px;margin-top:8px;">
-      <p class="card-label">Logo Description</p>
-      <h3 class="card-title" style="font-size:17px;">About the Mark</h3>
-      <p class="card-body">Logo description and concept explanation to be added after AI generation is complete.</p>
+  <!-- THREE SIZES -->
+  <section class="sizes-section">
+    <h2>Three sizes</h2>
+    <p>Per the Module 8 brief — all three are vector SVGs.</p>
+    <div class="sizes-grid">
+
+      <!-- LARGE COLOR -->
+      <div class="size-card">
+        <div class="size-canvas">
+          <svg viewBox="0 0 200 190" xmlns="http://www.w3.org/2000/svg" width="190" height="180">
+            <ellipse cx="80" cy="70" rx="38" ry="27" fill="none" stroke="#c8651a" stroke-width="3"/>
+            <circle cx="80" cy="70" r="11" fill="#c8651a"/>
+            <path d="M 113,90 C 132,111 148,131 162,150"
+                  stroke="#c8651a" stroke-width="8.5" stroke-linecap="round" fill="none"/>
+            <line x1="42" y1="158" x2="152" y2="158" stroke="#e5e1db" stroke-width="1"/>
+            <text x="97" y="175" text-anchor="middle"
+                  font-family="'Playfair Display',Georgia,serif"
+                  font-style="italic" font-size="20" fill="#1a1a17">youngjae</text>
+          </svg>
+        </div>
+        <div class="size-info">
+          <span class="size-tag">Large · Color</span>
+          <p class="size-name">Full wordmark</p>
+          <p class="size-note">Primary version</p>
+        </div>
+      </div>
+
+      <!-- MEDIUM B&W -->
+      <div class="size-card">
+        <div class="size-canvas">
+          <svg viewBox="0 0 200 190" xmlns="http://www.w3.org/2000/svg" width="190" height="180">
+            <ellipse cx="80" cy="70" rx="38" ry="27" fill="none" stroke="#1a1a17" stroke-width="3"/>
+            <circle cx="80" cy="70" r="11" fill="#1a1a17"/>
+            <path d="M 113,90 C 132,111 148,131 162,150"
+                  stroke="#1a1a17" stroke-width="8.5" stroke-linecap="round" fill="none"/>
+            <line x1="42" y1="158" x2="152" y2="158" stroke="#ccc" stroke-width="1"/>
+            <text x="97" y="175" text-anchor="middle"
+                  font-family="'Playfair Display',Georgia,serif"
+                  font-style="italic" font-size="20" fill="#1a1a17">youngjae</text>
+          </svg>
+        </div>
+        <div class="size-info">
+          <span class="size-tag">Medium · Black &amp; White</span>
+          <p class="size-name">Print version</p>
+          <p class="size-note">No tagline</p>
+        </div>
+      </div>
+
+      <!-- SMALL ICON -->
+      <div class="size-card">
+        <div class="size-canvas dark">
+          <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" width="90" height="90">
+            <circle cx="50" cy="50" r="50" fill="#c8651a"/>
+            <ellipse cx="40" cy="40" rx="20" ry="14" fill="none" stroke="white" stroke-width="2.8"/>
+            <circle cx="40" cy="40" r="5.5" fill="white"/>
+            <path d="M 57,51 C 65,60 72,68 78,75"
+                  stroke="white" stroke-width="6" stroke-linecap="round" fill="none"/>
+          </svg>
+        </div>
+        <div class="size-info">
+          <span class="size-tag">Small · Icon</span>
+          <p class="size-name">Favicon &amp; nav badge</p>
+          <p class="size-note">Symbol only</p>
+        </div>
+      </div>
+
     </div>
   </section>
 
   <hr class="divider">
 
-  <!-- AI Generation Process -->
-  <section class="process-section">
-    <h2>AI Generation Process</h2>
-    <p>The prompts used and the AI tool used to generate the personal logo. Full documentation to be added.</p>
-
-    <div class="prompt-block">
-      <span class="prompt-label">Prompt 1 · Concept</span>
-      <p class="prompt-text">[AI prompt to be added]</p>
+  <!-- CRITERIA -->
+  <section class="criteria-section">
+    <h2>Why this mark works</h2>
+    <div class="cr">
+      <span class="cr-k">Originality</span>
+      <span class="cr-v">A spoon whose bowl contains an eye — this specific combination does not exist elsewhere. The mark is impossible to confuse with any other brand because it requires the exact overlap of the two concepts this site is built on.</span>
     </div>
-    <div class="prompt-block">
-      <span class="prompt-label">Prompt 2 · Refinement</span>
-      <p class="prompt-text">[AI prompt to be added]</p>
+    <div class="cr">
+      <span class="cr-k">Single shape</span>
+      <span class="cr-v">This is not two elements placed next to each other. The spoon bowl <em>is</em> the eye. One silhouette, two simultaneous readings. The mark cannot be simplified further without destroying one of the two meanings.</span>
     </div>
-    <div class="prompt-block">
-      <span class="prompt-label">Prompt 3 · Final</span>
-      <p class="prompt-text">[AI prompt to be added]</p>
+    <div class="cr">
+      <span class="cr-k">Scale</span>
+      <span class="cr-v">At 28px the oval spoon bowl and pupil dot are still legible. The handle extends to give directional movement. At 300px the duality is fully visible.</span>
+    </div>
+    <div class="cr">
+      <span class="cr-k">Denotation</span>
+      <span class="cr-v">An oval spoon bowl with a filled circle at its center, and a curved handle extending to the lower right.</span>
+    </div>
+    <div class="cr">
+      <span class="cr-k">Connotation</span>
+      <span class="cr-v">The spoon connotes eating, food, mukbang, the act of bringing food to the mouth. The filled circle inside reads as a pupil — an eye staring from within the spoon. Together: the site's name. A hungry gaze. The spoon looks at you as you look at food.</span>
+    </div>
+    <div class="cr">
+      <span class="cr-k">Myth (Barthes)</span>
+      <span class="cr-v">The mark naturalizes what the essay argues: that watching food and eating food are the same desire. The spoon-eye collapses the act of looking and the act of consuming into a single shape — which is precisely what the Baegopa series does to its viewers.</span>
     </div>
   </section>
 
   <hr class="divider">
 
-  <!-- AI Video -->
-  <section class="ai-video-section">
-    <h2 style="font-family:var(--serif);font-size:22px;font-weight:700;margin-bottom:8px;">AI Cinematic Video</h2>
-    <p style="font-size:14px;color:var(--muted);margin-bottom:24px;">15-second AI-generated cinematic video. Content and prompts to be added.</p>
-    <div class="placeholder" style="width:100%;aspect-ratio:16/9;border-radius:var(--radius);">
-      AI Video — Coming Soon
+  <!-- PROMPTS -->
+  <section class="prompts-section">
+    <h2>The AI prompts</h2>
+    <p class="prompts-intro">
+      Tool: <strong>Anthropic Claude (claude-sonnet-4-6)</strong>, concept development and direct SVG generation.
+    </p>
+
+    <div class="pcard">
+      <span class="pnum">Prompt 1 · Core constraint</span>
+      <p class="pbody">I need a logo for "Hungry Gaze." All previous attempts had the two concepts side by side — chopsticks next to an eye, arc next to text. I need a single shape that IS both concepts simultaneously, like the FedEx arrow. The shape should be impossible to see as only one thing. "Hungry" and "gaze" must be the same object.</p>
     </div>
+
+    <div class="pcard">
+      <span class="pnum">Prompt 2 · Direction chosen</span>
+      <p class="pbody">I want the spoon-eye concept. A spoon (food, hunger, mukbang) where the oval bowl of the spoon contains a pupil dot — making the bowl of the spoon simultaneously the iris of an eye. One shape reads as both. The handle grounds it as a spoon so the first reading is always "spoon," then the pupil reveals the eye. Accent color #c8651a. Minimal strokes.</p>
+    </div>
+
+    <div class="pcard">
+      <span class="pnum">Prompt 3 · Sizing and wordmark</span>
+      <p class="pbody">Three variants: (1) Large — spoon-eye in orange + rule + "youngjae" italic serif + "HUNGRY · GAZE" tagline in mono. (2) Medium B&W — same mark in black, wordmark only. (3) Small icon — white spoon-eye mark on solid orange circle badge, no text. The icon must read at 28px in a navigation bar.</p>
+    </div>
+
+    <div class="pcard">
+      <span class="pnum">Prompt 4 · Semiotic framing</span>
+      <p class="pbody">Describe the mark using the semiotic vocabulary of the course. Explain the denotation, connotation, and how the mark encodes the Barthesian myth that the essay identifies in the Baegopa series — that looking at food and consuming food are the same act of desire.</p>
+    </div>
+
   </section>
 
 </div>
@@ -175,7 +247,7 @@
     </div>
   </div>
   <div class="footer-bottom">
-    <span>© 2026 Youngjae · EST 240 · SUNY Korea</span>
+    <span>© 2025 Youngjae · EST 240 · SUNY Korea</span>
   </div>
 </footer>
 
