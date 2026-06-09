@@ -8,7 +8,6 @@
 <style>
 .page-header { padding: 56px 0 40px; border-bottom: 1px solid var(--border); margin-bottom: 56px; }
 
-/* Video section */
 .video-hero { margin-bottom: 56px; }
 .video-hero video {
   width: 100%;
@@ -28,16 +27,30 @@
   margin-top: 12px;
 }
 
-/* Prompt section */
-.prompt-section { margin-bottom: 56px; }
-.prompt-section h2 {
-  font-family: var(--serif);
-  font-size: 22px;
-  font-weight: 700;
+.hook-twist {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin-bottom: 40px;
+}
+.ht-card { border-radius: var(--radius); padding: 24px 26px; }
+.ht-hook { background: var(--accent-light); border: 1px solid rgba(200,101,26,0.2); }
+.ht-twist { background: #f0ede8; border: 1px solid var(--border); }
+.ht-label {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--accent);
+  display: block;
   margin-bottom: 8px;
 }
-.prompt-section > p { font-size: 13px; color: var(--muted); margin-bottom: 24px; }
+.ht-time { font-family: var(--serif); font-size: 16px; font-weight: 600; margin-bottom: 10px; }
+.ht-desc { font-size: 13.5px; color: var(--muted); line-height: 1.75; }
 
+.prompt-section { margin-bottom: 56px; }
+.prompt-section h2 { font-family: var(--serif); font-size: 22px; font-weight: 700; margin-bottom: 8px; }
+.prompt-section > p { font-size: 13px; color: var(--muted); margin-bottom: 24px; }
 .prompt-display {
   background: #1c1a17;
   border-radius: var(--radius);
@@ -53,18 +66,9 @@
   display: block;
   margin-bottom: 14px;
 }
-.prompt-text {
-  font-family: var(--mono);
-  font-size: 13px;
-  color: #c8bfaf;
-  line-height: 1.9;
-}
-.prompt-text span {
-  color: #e8a048;
-  font-weight: 500;
-}
+.prompt-text { font-family: var(--mono); font-size: 13px; color: #c8bfaf; line-height: 1.9; }
+.prompt-text span { color: #e8a048; font-weight: 500; }
 
-/* Structure breakdown */
 .structure-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -86,29 +90,14 @@
   display: block;
   margin-bottom: 6px;
 }
-.struct-label {
-  font-family: var(--serif);
-  font-size: 15px;
-  font-weight: 600;
-  margin-bottom: 6px;
-}
-.struct-content {
-  font-size: 13px;
-  color: var(--muted);
-  line-height: 1.7;
-}
+.struct-label { font-family: var(--serif); font-size: 15px; font-weight: 600; margin-bottom: 6px; }
+.struct-content { font-size: 13px; color: var(--muted); line-height: 1.7; }
 
-/* Technical concepts */
 .concepts-section { margin-bottom: 56px; }
-.concepts-section h2 {
-  font-family: var(--serif);
-  font-size: 22px;
-  font-weight: 700;
-  margin-bottom: 24px;
-}
+.concepts-section h2 { font-family: var(--serif); font-size: 22px; font-weight: 700; margin-bottom: 24px; }
 .concept-row {
   display: grid;
-  grid-template-columns: 180px 1fr;
+  grid-template-columns: 200px 1fr;
   gap: 20px;
   padding: 16px 0;
   border-bottom: 1px solid var(--border);
@@ -127,37 +116,6 @@
 }
 .concept-val { color: var(--muted); }
 
-/* Hook Twist section */
-.hook-twist {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 20px;
-  margin-bottom: 40px;
-}
-.ht-card {
-  border-radius: var(--radius);
-  padding: 24px 26px;
-}
-.ht-hook { background: var(--accent-light); border: 1px solid rgba(200,101,26,0.2); }
-.ht-twist { background: #f0ede8; border: 1px solid var(--border); }
-.ht-label {
-  font-family: var(--mono);
-  font-size: 10px;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: var(--accent);
-  display: block;
-  margin-bottom: 8px;
-}
-.ht-time {
-  font-family: var(--serif);
-  font-size: 16px;
-  font-weight: 600;
-  margin-bottom: 10px;
-}
-.ht-desc { font-size: 13.5px; color: var(--muted); line-height: 1.75; }
-
-/* Platform info */
 .platform-card {
   background: var(--white);
   border: 1px solid var(--border);
@@ -169,31 +127,48 @@
   margin-bottom: 56px;
 }
 .platform-icon {
-  width: 48px;
-  height: 48px;
+  width: 48px; height: 48px;
   background: var(--accent);
   border-radius: 8px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  display: flex; align-items: center; justify-content: center;
   color: white;
   font-family: var(--mono);
   font-size: 11px;
   font-weight: 500;
   flex-shrink: 0;
 }
-.platform-info {}
-.platform-name {
-  font-family: var(--serif);
-  font-size: 17px;
-  font-weight: 600;
-  margin-bottom: 4px;
-}
+.platform-name { font-family: var(--serif); font-size: 17px; font-weight: 600; margin-bottom: 4px; }
 .platform-desc { font-size: 13px; color: var(--muted); }
 
+.rhetorical-banner {
+  background: linear-gradient(135deg, rgba(200,101,26,0.1), rgba(232,160,72,0.06));
+  border: 1px solid rgba(200,101,26,0.25);
+  border-radius: var(--radius);
+  padding: 24px 28px;
+  margin-bottom: 56px;
+}
+.rb-label {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--accent);
+  display: block;
+  margin-bottom: 10px;
+}
+.rb-message {
+  font-family: var(--serif);
+  font-size: 18px;
+  font-style: italic;
+  color: var(--text);
+  line-height: 1.6;
+  margin-bottom: 10px;
+}
+.rb-explain { font-size: 13.5px; color: var(--muted); line-height: 1.8; }
+
 @media (max-width: 720px) {
-  .structure-grid { grid-template-columns: 1fr; }
   .hook-twist { grid-template-columns: 1fr; }
+  .structure-grid { grid-template-columns: 1fr; }
   .concept-row { grid-template-columns: 1fr; gap: 4px; }
   .platform-card { flex-direction: column; align-items: flex-start; }
 }
@@ -225,19 +200,32 @@
   <div class="page-header">
     <span class="eyebrow">AI Mise-en-Scène &amp; Montage · EST 240</span>
     <h1 class="section-title" style="font-size:clamp(36px,5vw,56px);">AI Video</h1>
-    <p style="font-family:var(--serif);font-style:italic;font-size:17px;color:var(--muted);margin-top:10px;">A 5–8 second hook and twist narrative demonstrating technical knowledge.</p>
+    <p style="font-family:var(--serif);font-style:italic;font-size:17px;color:var(--muted);margin-top:10px;">The Hungry Eye — a 5–8 second hook and twist narrative.</p>
   </div>
 
   <!-- VIDEO -->
   <section class="video-hero">
     <video controls playsinline>
-      <source src="est_240_ai_video.mp4" type="video/mp4">
+      <source src="Ramen_bowl_on_phone_screen_202606091919.mp4" type="video/mp4">
       Your browser does not support the video tag.
     </video>
-    <p class="video-caption">AI-generated cinematic short — Hook &amp; Twist narrative · EST 240 Visual Rhetoric &amp; IT</p>
+    <p class="video-caption">
+      <em>The Hungry Eye</em> — AI-generated cinematic short · Hook &amp; Twist narrative · EST 240 Visual Rhetoric &amp; IT
+    </p>
   </section>
 
   <hr class="divider">
+
+  <!-- RHETORICAL MESSAGE -->
+  <div class="rhetorical-banner">
+    <span class="rb-label">Rhetorical Message</span>
+    <p class="rb-message">"Mukbang does not feed you. It trains your eyes to eat instead."</p>
+    <p class="rb-explain">
+      The video argues that mukbang content creates vicarious consumption — the viewer substitutes visual pleasure for physical eating.
+      This is Mulvey's scopophilia applied directly to food: the close-up of the ramen produces desire, but the twist reveals
+      that the desire was always directed at a screen, never at actual food. The hungry gaze replaces the hungry mouth.
+    </p>
+  </div>
 
   <!-- HOOK & TWIST -->
   <section style="margin-bottom:48px;">
@@ -246,14 +234,27 @@
 
     <div class="hook-twist">
       <div class="ht-card ht-hook">
-        <span class="ht-label">Hook · First 3–5 seconds</span>
-        <p class="ht-time">The Runway</p>
-        <p class="ht-desc">A lone fighter jet sits on an empty aircraft carrier runway at dusk. A pilot stands beside it in full flight suit, helmet under one arm. A slow crane shot rises from ground level as the warm sunset backlight carves a dramatic silhouette against the orange and red sky. The scene is still, heroic, cinematic.</p>
+        <span class="ht-label">Hook · First 3–4 seconds</span>
+        <p class="ht-time">The Perfect Bowl</p>
+        <p class="ht-desc">
+          An extreme close-up macro shot of a perfect steaming bowl of ramen.
+          Golden key lighting catches every droplet of broth and strand of noodle.
+          In slow motion, chopsticks enter the frame and lift a perfectly curled
+          portion of noodles, steam rising dramatically. The composition is
+          symmetrical, cinematic, and deeply aspirational — a vision of food
+          that produces immediate desire.
+        </p>
       </div>
       <div class="ht-card ht-twist">
-        <span class="ht-label" style="color:var(--muted);">Twist · Final 3–5 seconds</span>
-        <p class="ht-time">The Launch</p>
-        <p class="ht-desc">The jet's engine suddenly ignites. In a burst of heat distortion and afterburner glow, the aircraft launches off the carrier edge and disappears into the orange sky, leaving only a shimmering trail of hot exhaust. The pilot is gone. The runway is empty. The silence that follows reframes everything we just saw.</p>
+        <span class="ht-label" style="color:var(--muted);">Twist · Final 3–4 seconds</span>
+        <p class="ht-time">The Phone Screen</p>
+        <p class="ht-desc">
+          A sharp match cut zoom-out reveals that the glowing, perfect bowl of
+          ramen was only a YouTube mukbang video playing on a small phone screen.
+          The phone rests on a plain desk in a dark, empty room. The person sits
+          alone in dim blue light, the desk in front of them completely bare.
+          The warm golden glow was never real food — only a screen.
+        </p>
       </div>
     </div>
   </section>
@@ -268,7 +269,7 @@
     <div class="prompt-display">
       <span class="prompt-tag">Full Prompt</span>
       <p class="prompt-text">
-        <span>[Wide shot]</span> + <span>[lone fighter jet on an empty aircraft carrier runway at dusk, pilot standing beside it in full flight suit with helmet under one arm]</span> + <span>[the jet's engine suddenly ignites and it launches off the carrier edge into the orange sky, leaving a trail of heat distortion]</span> + <span>[slight low angle looking up toward the figure and jet]</span> + <span>[slow crane shot rising from ground level up to eye-level as the jet launches]</span> + <span>[warm sunset backlight creating dramatic silhouette, orange and red color palette, cinematic shallow depth of field]</span>
+        <span>[Extreme close-up macro shot]</span> + <span>[perfect steaming bowl of ramen noodles on a dark wooden surface, golden key lighting catching every droplet of broth and strand of noodle, chopsticks lifting noodles in slow motion with steam rising dramatically]</span> + <span>[Hook: cinematic aspirational food close-up building desire — Twist: sharp match cut zoom-out reveals the glowing bowl is a mukbang YouTube video on a phone screen, person sitting alone in a dark empty room with bare desk, phone as only light source]</span> + <span>[symmetrical eye-level angle during hook, flat static wide shot after match cut]</span> + <span>[slow motion during hook, sudden static hold after twist]</span> + <span>[warm golden key lighting with shallow depth of field in hook, cold dim blue ambient light in twist with phone screen glow as the only source of light]</span>
       </p>
     </div>
 
@@ -276,23 +277,23 @@
     <div class="structure-grid">
       <div class="struct-card">
         <span class="struct-num">Element 1 · Shot Type</span>
-        <p class="struct-label">Wide Shot</p>
-        <p class="struct-content">Establishes the full spatial context — the carrier deck, the jet, and the pilot are all visible, grounding the viewer in the scene before the action begins.</p>
+        <p class="struct-label">Extreme Close-Up Macro</p>
+        <p class="struct-content">Isolates the food completely from any context, turning the ramen into a pure visual object of desire — exactly how Chandler describes the BCU removing contextual information to reduce the subject to sensory essence.</p>
       </div>
       <div class="struct-card">
         <span class="struct-num">Element 2 · Main Subject</span>
-        <p class="struct-label">Pilot + Fighter Jet at Dusk</p>
-        <p class="struct-content">A lone pilot in full flight suit beside a silent jet on an empty carrier runway. The stillness of the subject builds anticipation before the twist.</p>
+        <p class="struct-label">Ramen Bowl → Phone Screen</p>
+        <p class="struct-content">The subject transforms between hook and twist. What appeared to be a real bowl of ramen is revealed to be a 2D image on a phone screen — the subject was always mediated, never direct.</p>
       </div>
       <div class="struct-card">
         <span class="struct-num">Element 3 · Hook &amp; Twist Narrative</span>
-        <p class="struct-label">Stillness → Sudden Launch</p>
-        <p class="struct-content">The engine ignites without warning and the jet launches off the carrier edge — a visual reversal that transforms a static, contemplative scene into explosive motion.</p>
+        <p class="struct-label">Desire → Revelation</p>
+        <p class="struct-content">The hook manufactures desire through visual technique. The twist delivers the rhetorical payoff: the desire was engineered by a screen. The entire hook must be reinterpreted once the twist lands.</p>
       </div>
       <div class="struct-card">
         <span class="struct-num">Element 4 · Angle + Camera + Lighting</span>
-        <p class="struct-label">Low Angle · Crane · Backlight</p>
-        <p class="struct-content">Slight low angle creates power. Slow crane rises with the launch. Warm sunset backlight produces cinematic silhouette with orange and red palette, shallow depth of field.</p>
+        <p class="struct-label">Macro · Match Cut · Contrast</p>
+        <p class="struct-content">Slow motion and golden key lighting in the hook. A sharp match cut snaps to a cold, static wide shot in the twist. The lighting contrast — warm gold versus cold blue — does the rhetorical work without any text or voiceover.</p>
       </div>
     </div>
   </section>
@@ -304,48 +305,42 @@
     <h2>Technical Concepts Demonstrated</h2>
 
     <div class="concept-row">
-      <span class="concept-key">Wide Shot</span>
-      <span class="concept-val">Establishes spatial context — carrier deck, jet, and pilot all visible within the same frame. A foundational Mise-en-Scène choice that sets the entire scene before the narrative twist.</span>
+      <span class="concept-key">Extreme Close-Up (ECU)</span>
+      <span class="concept-val">The opening macro shot isolates the ramen bowl so completely that no spatial context exists. The viewer has no way of knowing whether the food is real or on a screen — which is precisely the point the twist exploits.</span>
     </div>
     <div class="concept-row">
-      <span class="concept-key">Low Angle Shot</span>
-      <span class="concept-val">The slight upward angle positions the pilot and jet as powerful, larger-than-life figures. Following Chandler's framework: low angle communicates power and importance.</span>
-    </div>
-    <div class="concept-row">
-      <span class="concept-key">Crane Shot</span>
-      <span class="concept-val">A slow crane movement rises from ground level to eye-level, building anticipation during the hook and physically following the launch during the twist — camera movement as narrative.</span>
+      <span class="concept-key">Slow Motion</span>
+      <span class="concept-val">The chopstick movement and steam rising are rendered in slow motion during the hook, elongating the moment of anticipation and amplifying the sensory appeal of the food. Slow motion as a desire-construction device.</span>
     </div>
     <div class="concept-row">
       <span class="concept-key">Shallow Depth of Field</span>
-      <span class="concept-val">The cinematic shallow depth of field isolates the silhouetted pilot and jet against the softly blurred sunset background, directing viewer attention and reinforcing the dramatic mood.</span>
+      <span class="concept-val">The dark background is softly blurred throughout the hook, keeping the viewer's eye locked entirely on the food. This Mise-en-Scène choice removes any environmental cues that might reveal the truth before the twist.</span>
     </div>
     <div class="concept-row">
-      <span class="concept-key">Key Lighting / Backlight</span>
-      <span class="concept-val">Warm sunset backlight carves a dramatic silhouette — a classic Mise-en-Scène lighting choice where the quality and direction of light constructs meaning, not just illumination.</span>
+      <span class="concept-key">Match Cut</span>
+      <span class="concept-val">The central Montage technique of the video. The sudden cut from the glowing bowl to the phone screen reuses the same glowing light source, making the transition visually seamless while the meaning reverses completely.</span>
     </div>
     <div class="concept-row">
-      <span class="concept-key">Color Palette</span>
-      <span class="concept-val">Orange and red color palette throughout — connoting heat, power, danger, and the warmth of a fading day. Color functions as a connotative sign system (Barthes) within the frame.</span>
+      <span class="concept-key">Contrast Lighting</span>
+      <span class="concept-val">Warm golden key lighting in the hook versus cold dim blue ambient light in the twist. The same light source (the phone screen) reads entirely differently in each context — demonstrating how lighting constructs mood and meaning.</span>
     </div>
     <div class="concept-row">
-      <span class="concept-key">Heat Distortion / Motion</span>
-      <span class="concept-key" style="color:var(--muted)"></span>
-      <span class="concept-val">The trail of heat distortion left by the launching jet — a visual texture that reads as both physical phenomenon and metaphor for the energy and velocity of the moment.</span>
+      <span class="concept-key">Wide Static Shot</span>
+      <span class="concept-val">The sudden shift from the dynamic slow-motion macro to a cold, perfectly still wide shot after the match cut uses the contrast in camera movement itself as a rhetorical device — the stillness signals the absence and emptiness of the twist.</span>
     </div>
   </section>
 
   <hr class="divider">
 
   <!-- PLATFORM -->
-  <section style="margin-bottom:80px;">
+  <section style="margin-bottom: 80px;">
     <span class="eyebrow">AI Platform Used</span>
     <h2 class="section-title" style="font-size:clamp(20px,2.5vw,28px);margin-bottom:24px;">Generation Tool</h2>
-
     <div class="platform-card">
       <div class="platform-icon">AI</div>
       <div class="platform-info">
-        <p class="platform-name">[Google AI Studio]</p>
-        <p class="platform-desc">Google AI Studio Veo 3.1.</p>
+        <p class="platform-name">[AI Platform Name]</p>
+        <p class="platform-desc">Add the name of the AI video platform used — e.g. Google Flow, Kling AI, RunwayML, Pika, etc.</p>
       </div>
     </div>
   </section>
@@ -375,7 +370,7 @@
     </div>
   </div>
   <div class="footer-bottom">
-    <span>© 2026 Youngjae · EST 240 · SUNY Korea</span>
+    <span>© 2025 Youngjae · EST 240 · SUNY Korea</span>
   </div>
 </footer>
 
